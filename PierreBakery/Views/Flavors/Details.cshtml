@@ -1,0 +1,55 @@
+@{
+  Layout = "_Layout";
+}
+
+<!-- @model Factory.Models.Machine
+
+<div class = "container">
+  <h2>Machine Details</h2>
+  
+  <div class = "infoBox">
+  @Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink" })
+  @Html.ActionLink("Machine List", "Index", null, null, new { @class = "pageLink" })
+
+  @Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId }, new { @class ="pageLink" })
+  @Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId}, new { @class = "pageLink" })
+
+  <h3> Machine @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+    @if (ViewBag.Engineers.Count == 0)
+    {
+      <h4>No Engineer to Add Yet!</h4>
+      @Html.ActionLink("Add Engineers to Factory", "Create", "Engineers", null, new { @class = "pageLink2" })
+    }
+    else
+    {
+    @Html.ActionLink("Add Engineer for This Machine", "AddEngineer", new { id = Model.MachineId }, new { @class = "pageLink2" }) 
+    } 
+  </div>
+
+  <div class = "detailBox">
+    <img class = "image1" src = "~/image/machine2.png">
+
+    @if(@Model.JoinEntities.Count == 0)
+    {
+      <h5>No Licenced Engineer for This Machine!</h5>
+    }
+    else
+    {
+      <h5>Engineers List for <strong>@Html.DisplayFor(model => model.Name)</strong></h5>
+    <ul>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <li>@join.Engineer.Name</li>
+      @using (Html.BeginForm("DeleteEngineer", "Machines"))
+      {
+        @Html.Hidden("joinId", @join.EngineerMachineId)
+        <input type = "submit" value = "Delete"  class = "btn3" />
+      }
+    }
+    </ul>
+  }
+  </div> 
+</div> -->
+
+

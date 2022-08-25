@@ -1,0 +1,230 @@
+body {
+  text-align: center; 
+  font-family:Impact, 
+  Haettenschweiler, 'Arial Bold', sans-serif;
+  background-color: #f4f09c;
+  background: linear-gradient(0.25turn, #a34808, #f3ec78,#a34808);
+}
+
+.title {
+  padding: 1%;
+  color: #111010;
+  background-color: #f4f09c;
+  background-image: linear-gradient(45deg, #f3ec78, #ed802d, #f3ec78 );
+  background-size: 100%;
+  letter-spacing: 5px;
+  text-shadow: 2px 2px 2px #54c10b;
+}
+
+h3 {
+  margin-top: 5%;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #062011;
+  text-shadow: 1px 1px 1px #14e240;
+}
+
+h2 {
+  margin-top: 1%;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #a11212;
+  text-shadow: 2px 2px 2px #8af467;
+}
+
+h4 {
+  margin-top: 15%;
+  letter-spacing: 2px;
+  text-align: center;
+  font-family:Arial;
+  color: #130601;
+  font-size: larger;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #8aec67;
+}
+
+h5, h6{
+  font-family: Arial;
+  font-weight: bold;
+  margin-top: 1%;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #f2e5e5;
+}
+
+.wordLink {
+  color: #0d3f05;
+  font-family:  Arial;
+  background-color: rgb(235, 179, 111);
+}
+
+.linkWordColor {
+  animation: opacity 2s ease-in-out infinite;
+  opacity: 1;
+  color: #54c10b;
+  font-size: 25px;
+  font-family:  Arial;
+  text-shadow: 2px 2px 2px #100f01;
+}
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+img {
+  margin-top: 1%;
+  margin-left: -1.5%;
+  width: 103%;
+}
+
+.image1 {
+  float: right;
+  margin-top: 5%;
+  width: 250px;
+}
+
+.image2 {
+  float: right;
+  margin-top: 5%;
+  margin-right: 5%;
+  width: 250px;
+}
+
+.col {
+  background-image: linear-gradient(45deg, #f3ec78, #ed802d, #f3ec78 );
+  padding: 1% 5% ;
+  border: 2px solid #0f0f0f;  
+  font-size: 20px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.infoBox {
+  margin-top: -.8%;
+  padding: 3% 6%;
+  background-color: rgb(231, 187, 93);
+  border: 25px solid #d56d0c;
+  font-size: 25px;
+  text-align: auto;
+}
+
+.indexBox {
+  box-sizing: content-box;  
+  height: 300px;
+  margin-top: 9%;
+  padding: 2% 6% 2% 6%;
+  color: #e9990f;
+  background-color: black; 
+  font-size: 20px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.detailBox {
+  box-sizing: content-box;  
+  height: 273px;
+  padding: 2% 6% 2% 6%;
+  color: #e9990f;
+  background-color:black; 
+  font-size: 20px;
+  text-align: left;
+  font-weight: bold;
+  font-family: Arial;
+}
+
+.pageLink {
+  color:  #110101;
+  background-image: linear-gradient(45deg, #68e117,#b1df92, #65e40f );
+  font-size: 20px;
+  float: left;
+  margin-left: 10%;
+  width: 35%;
+  border: 3px solid #012406;
+  padding: 3px;
+  margin-top: 1%;
+  text-align: center;
+  font-weight: bold;
+  font-family: Arial;
+  border-radius: 30%;
+}
+
+.pageLink:hover, .btn:hover,.btn2:hover,.pageLink2:hover {
+  background-color:#eb9723; 
+  color: #df6f14;
+}
+
+.btn {
+  border: 2px solid #1a780a;
+  padding: 2px;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 20px;
+  color: #1b0f01;
+  background-image: linear-gradient(45deg, #68e117,#a6de80, #65e40f );
+  width: 30%;
+  letter-spacing: 5px;
+  text-shadow: 2px 2px 2px #f0c725;
+}
+
+.btn2 {
+  float: left;
+  margin-left: 12%;
+  border: 2px solid #1a780a;
+  padding: 2px;
+  font-family: Arial;
+  text-shadow: 2px 2px 2px #f0c725;
+  font-size: 20px;
+  font-weight: bold;
+  color:  #041301;
+  width: 30%;
+  letter-spacing: 5px;
+  background-image: linear-gradient(45deg, #68e117,#a6de80, #65e40f );
+}
+
+.btn3 {
+  background-image: linear-gradient(45deg, #68e117,#a6de80, #65e40f );
+  color:  #041301;
+  font-weight: bold;
+  margin-left: 5%;
+} 
+
+.pageLink2 {
+  color:  #cc2910;
+  margin-top:-5%;
+  width: 30%;
+  font-size: 20px;
+  padding: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-family: Arial;
+  border: 2px solid #f4edea;
+  background-color: #f4f09c;
+  background-image: linear-gradient(45deg, #68e117,#a6de80, #65e40f );
+  border-radius: 30%;
+}
+
+.pageLink3 {
+  color:  #110101;
+  background-image: linear-gradient(45deg, #68e117,#b1df92, #65e40f );
+  font-size: 20px;
+  float: left;
+  margin-left: 40%;
+  width: 20%;
+  border: 3px solid #012406;
+  padding: 3px;
+  margin-top: 1%;
+  text-align: center;
+  font-weight: bold;
+  font-family: Arial;
+  border-radius: 30%;
+}
+
+
+

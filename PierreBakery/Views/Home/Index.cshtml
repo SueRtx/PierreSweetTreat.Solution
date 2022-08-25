@@ -1,0 +1,58 @@
+@{
+  Layout = "_Layout";
+}
+
+<!-- @using Factory.Models
+
+<div class = "container">
+  @if (User.Identity.IsAuthenticated)
+  {
+  <h2>Welcome @User.Identity.Name !</h2>
+  @using (Html.BeginForm("LogOff", "Account"))
+    {
+      <input type="submit" class="btn btn-primary" value="Log Out"/>
+    }
+  }
+  else
+  {
+    <h5 class = "linkWordColor">@Html.ActionLink("Create/Login Account", "Index", "Account")</h5>
+  }
+
+  @Html.ActionLink("Add Engineer", "Create", "Engineers", null, new { @class = "pageLink" })
+  @Html.ActionLink("Add Machine", "Create", "Machines", null, new { @class = "pageLink" })
+
+  <img src = "~/image/machine.jpg">
+
+  <div class = "row">
+    <div class = "col">
+      @if (ViewBag.Engineers.Count == 0)
+      {
+        <h3>No Engineer Yet!</h3>
+      }
+      else
+      {
+        <h2>Engineers List</h2>
+        <h6>*Click on Engineer to See Details* </h6>
+        @foreach (Engineer engineer in @ViewBag.Engineers)
+        {
+          <li>@Html.ActionLink($"{ engineer.Name }", "Details", "Engineers", new { id = engineer.EngineerId }, new { @class = "linkWordColor" })</li>
+        }
+      }
+    </div>
+    <div class = "col">
+      @if (ViewBag.Machines.Count == 0) 
+      {
+        <h3>No Machine Yet!</h3>
+      }
+      else
+      {
+        <h2>Machine List</h2>
+        <h6>*Click on Machine to See Details* </h6>
+        @foreach (Machine machine in ViewBag.Machines)
+        {
+          <li>@Html.ActionLink($"{ machine.Name }", "Details", "Machines", new { id = machine.MachineId }, new { @class = "linkWordColor" })</li>
+        }
+      }
+    </div>
+  </div>
+</div> -->

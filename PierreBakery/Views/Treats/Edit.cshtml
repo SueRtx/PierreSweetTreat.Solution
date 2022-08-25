@@ -1,0 +1,25 @@
+<!-- @{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer
+
+<div class = "container">
+  <h2>Edit Engineer: @Html.DisplayFor(model => model.Name)</h2>
+
+  <div class = "infoBox">
+    @using (Html.BeginForm())
+    {
+      @Html.HiddenFor(model => model.EngineerId)
+
+      <h3>@Html.LabelFor(model => model.Name)
+      @Html.EditorFor(model => model.Name, new { @class = "wordLink", required = "required", })
+
+      @Html.Label("Date Hired") 
+      @Html.TextBoxFor(model => model.DateHired, new { @class = "wordLink", type = "date", required = "required" })</h3>
+      <br />
+      <input type = "submit" value = "Save" class = "btn2" />
+    }
+    @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
+  </div>
+</div> -->
