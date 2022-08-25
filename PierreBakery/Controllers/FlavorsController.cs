@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Factory.Models;
+using PierreBakery.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
@@ -9,121 +9,121 @@ using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using System.Security.Claims;
 
-// namespace Factory.Controllers
-// {
-//   [Authorize]
-//   public class MachinesController : Controller
-//   {
-//     private readonly FactoryContext _db;
-//     private readonly UserManager<ApplicationUser> _userManager;
+namespace PierreBakery.Controllers
+{
+  [Authorize]
+  public class FlavorsController : Controller
+  {
+    private readonly PierreBakeryContext _db;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-//     public MachinesController(UserManager<ApplicationUser> userManager, FactoryContext db)
-//     {
-//       _userManager = userManager;
-//       _db = db;
-//     }
+    public FlavorsController(UserManager<ApplicationUser> userManager, PierreBakeryContext db)
+    {
+      _userManager = userManager;
+      _db = db;
+    }
 
-//     public async Task<ActionResult> Index()
-//     {
-//       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-//       var currentUser = await _userManager.FindByIdAsync(userId);
-//       var userMachines = _db.Machines.Where(entry => entry.User.Id == currentUser.Id).ToList();
-//       return View(userMachines);
-//       // return View(_db.Machines.ToList());
-//     }
+    public async Task<ActionResult> Index()
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      var userFlavors = _db.Flavors.Where(entry => entry.User.Id == currentUser.Id).ToList();
+      return View(userFlavors);
+      // return View(_db.Flavors.ToList());
+    }
 
-//     public ActionResult Create()
-//     {
-//       ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
-//       return View();
-//     }
+    public ActionResult Create()
+    {
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
+      return View();
+    }
 
-//     [HttpPost]
-//     public async Task<ActionResult> Create(Machine machine)
-//     {
-//       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-//       var currentUser = await _userManager.FindByIdAsync(userId);
-//       machine.User = currentUser;
-//       _db.Machines.Add(machine);
-//       _db.SaveChanges();
+    [HttpPost]
+    public async Task<ActionResult> Create(Flavor flavor)
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      flavor.User = currentUser;
+      _db.Flavors.Add(flavor);
+      _db.SaveChanges();
 
-//     //   if (EngineerId != 0)
-//     // {
-//     //     _db.EngineerRecipe.Add(new EngineerRecipe() { EngineerId = EngineerId, RecipeId = recipe.RecipeId });
-//     // }
-//     // _db.SaveChanges();
-//       return RedirectToAction("Index");
-//     }
+    //   if (TreatId != 0)
+    // {
+    //     _db.TreatFlavor.Add(new TreatFlavor() { TreatId = TreatId, FlavorId = flavorrecipe.FlavorId });
+    // }
+    // _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
-//     public ActionResult Details(int id)
-//     {
-//       ViewBag.Engineers = _db.Engineers.ToList();
-//       var thisMachine = _db.Machines
-//           .Include(machine => machine.JoinEntities)
-//           .ThenInclude(join => join.Engineer)
-//           .FirstOrDefault(machine => machine.MachineId == id);
-//       return View(thisMachine);
-//     }
+    public ActionResult Details(int id)
+    {
+      ViewBag.Treats = _db.Treats.ToList();
+      var thisFlavor = _db.Flavors
+          .Include(flavor => flavor.JoinEntities)
+          .ThenInclude(join => join.Treat)
+          .FirstOrDefault(flavor => flavor.FlavorId == id);
+      return View(thisFlavor);
+    }
 
-//     public ActionResult Edit(int id)
-//     {
-//       var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
-//       ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
-//       return View(thisMachine);
-//     }
+    public ActionResult Edit(int id)
+    {
+      var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
+      return View(thisFlavor);
+    }
 
-//     [HttpPost]
-//     public ActionResult Edit(Machine machine, int EngineerId)
-//     {
-//       if (EngineerId != 0)
-//       {
-//         _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = machine.MachineId });
-//       }
-//       _db.Entry(machine).State = EntityState.Modified;
-//       _db.SaveChanges();
-//       return RedirectToAction("Index");
-//     }
+    [HttpPost]
+    public ActionResult Edit(Flavor flavor, int TreatId)
+    {
+      if (TreatId != 0)
+      {
+        _db.TreatFlavor.Add(new TreatFlavor() { TreatId = TreatId, FlavorId = flavor.FlavorId });
+      }
+      _db.Entry(flavor).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
-//     public ActionResult AddEngineer(int id)
-//     {
-//       var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
-//       ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
-//       return View(thisMachine);
-//     }
+    public ActionResult AddTreat(int id)
+    {
+      var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
+      return View(thisFlavor);
+    }
 
-//     [HttpPost]
-//     public ActionResult AddEngineer(Machine machine, int EngineerId)
-//     {
-//       if (EngineerId != 0)
-//       {
-//         _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = machine.MachineId });
-//         _db.SaveChanges();
-//       }
-//       return RedirectToAction("Index");
-//     }
+    [HttpPost]
+    public ActionResult AddTreat(Flavor flavor, int TreatId)
+    {
+      if (TreatId != 0)
+      {
+        _db.TreatFlavor.Add(new TreatFlavor() { TreatId = TreatId, FlavorId = flavor.FlavorId });
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Index");
+    }
 
-//     public ActionResult Delete(int id)
-//     {
-//       var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
-//       return View(thisMachine);
-//     }
+    public ActionResult Delete(int id)
+    {
+      var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
+      return View(thisFlavor);
+    }
 
-//     [HttpPost, ActionName("Delete")]
-//     public ActionResult DeleteConfirmed(int id)
-//     {
-//       var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
-//       _db.Machines.Remove(thisMachine);
-//       _db.SaveChanges();
-//       return RedirectToAction("Index");
-//     }
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
+      _db.Flavors.Remove(thisFlavor);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
-//     [HttpPost]
-//     public ActionResult DeleteEngineer(int joinId)
-//     {
-//       var joinEntry = _db.EngineerMachine.FirstOrDefault(entry => entry.EngineerMachineId == joinId);
-//       _db.EngineerMachine.Remove(joinEntry);
-//       _db.SaveChanges();
-//       return RedirectToAction("Index");
-//     }
-//   }
-// }
+    [HttpPost]
+    public ActionResult DeleteTreat(int joinId)
+    {
+      var joinEntry = _db.TreatFlavor.FirstOrDefault(entry => entry.TreatFlavorId == joinId);
+      _db.TreatFlavor.Remove(joinEntry);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+  }
+}
