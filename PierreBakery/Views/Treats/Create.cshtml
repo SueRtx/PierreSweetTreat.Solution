@@ -2,22 +2,20 @@
   Layout = "_Layout";
 }
 
-<!-- @model Factory.Models.Engineer
+@model PierreBakery.Models.Treat
 
 <div class = "container">
-  <h2>Add Engineer</h2>
+  <h2>Add Treat</h2>
 
   <div class = "infoBox">
     @using (Html.BeginForm())
     {
       <h3>@Html.LabelFor(model => model.Name)
       @Html.TextBoxFor(model => model.Name, new { @class = "wordLink", required = "required" })
+      </h3>
       <br>
-      @Html.Label("Date Hired")
-      @Html.TextBoxFor(model => model.DateHired, new { @class = "wordLink", type = "date", required = "required" })</h3>
-      <br>
-      <input type = "submit" value = "Add Engineer" class = "btn2" />
+      <input type = "submit" value = "Add Treat" class = "btn2" />
     }
     @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
   </div>
-</div> -->
+</div>

@@ -2,54 +2,52 @@
   Layout = "_Layout";
 }
 
-<!-- @model Factory.Models.Engineer;
+@model PierreBakery.Models.Treat
 
 <div class = "container">
-  <h2>Engineer Details</h2>
+  <h2>Treat Details</h2>
   
   <div class = "infoBox">
     @Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink" })
-    @Html.ActionLink("Engineer List", "Index", null, null, new { @class = "pageLink" })
+    @Html.ActionLink("Treat List", "Index", null, null, new { @class = "pageLink" })
     
-    @Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId }, new { @class = "pageLink" })
-    @Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId }, new { @class = "pageLink" })
+    @Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId }, new { @class = "pageLink" })
+    @Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId }, new { @class = "pageLink" })
 
-    <h4>@Html.Label("Engineer Name"): @Html.DisplayFor(model => model.Name)
-    <br />
-    @Html.Label("Date Hired"): @Html.DisplayFor(model => model.DateHired)</h4>
+    <h4>@Html.Label("Treat Name"): @Html.DisplayFor(model => model.Name)
 
-    @if (ViewBag.Machines.Count == 0) 
+    @if (ViewBag.Flavors.Count == 0) 
     {
-      <h3>No Machine to Add Yet!</h3>
-      @Html.ActionLink("Add Machines to Factory", "Create", "Machines", null, new { @class = "pageLink2" })
+      <h3>No Flavor to Add Yet!</h3>
+      @Html.ActionLink("Add Flavor to Bakery", "Create", "Flavors", null, new { @class = "pageLink2" })
     }
     else
     {
-    @Html.ActionLink("Add machine to Engineer", "AddMachine", new { id = Model.EngineerId }, new {@class = "pageLink2"})
+    @Html.ActionLink("Add flavor to Treat", "AddFlavor", new { id = Model.TreatId }, new {@class = "pageLink2"})
     }
   </div>
 
   <div class = "detailBox">
-    <img class = "image2" src = "~/image/machine2.png">
+    <!-- <img class = "image2" src = "~/image/machine2.png"> -->
 
     @if(@Model.JoinEntities.Count == 0)
     {
-      <h5>Engineer Does Not Contain Any Machine!</h5>
+      <h5>Treat Does Not Contain Any Flavor!</h5>
     }
     else
     {
-      <h5>Machines this Engineer  Licensed to Repair</h5>
+      <h5>Flavors for this Treat</h5>
       <ul>
       @foreach(var join in Model.JoinEntities)
       {
-        <li>@join.Machine.Name</li>
-        @using (Html.BeginForm("DeleteMachine", "Engineers"))
+        <li>@join.Flavor.Name</li>
+        @using (Html.BeginForm("DeleteFlavor", "Treats"))
         {
-          @Html.Hidden("joinId", @join.EngineerMachineId)
+          @Html.Hidden("joinId", @join.TreatFlavorId)
           <input type = "submit" value = "Delete" class = "btn3"/>
         }  
       }
       </ul>
     }
   </div>
-</div> -->
+</div>

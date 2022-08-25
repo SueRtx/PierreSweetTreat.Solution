@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-<!-- @using Factory.Models
+@using PierreBakery.Models
 
 <div class = "container">
   @if (User.Identity.IsAuthenticated)
@@ -18,41 +18,41 @@
     <h5 class = "linkWordColor">@Html.ActionLink("Create/Login Account", "Index", "Account")</h5>
   }
 
-  @Html.ActionLink("Add Engineer", "Create", "Engineers", null, new { @class = "pageLink" })
-  @Html.ActionLink("Add Machine", "Create", "Machines", null, new { @class = "pageLink" })
+  @Html.ActionLink("Add Treat", "Create", "Treats", null, new { @class = "pageLink" })
+  @Html.ActionLink("Add Flavor", "Create", "Flavors", null, new { @class = "pageLink" })
 
-  <img src = "~/image/machine.jpg">
+  <img src = "~/image/flavor.jpg">
 
   <div class = "row">
     <div class = "col">
-      @if (ViewBag.Engineers.Count == 0)
+      @if (ViewBag.Treats.Count == 0)
       {
-        <h3>No Engineer Yet!</h3>
+        <h3>No Treat Yet!</h3>
       }
       else
       {
-        <h2>Engineers List</h2>
-        <h6>*Click on Engineer to See Details* </h6>
-        @foreach (Engineer engineer in @ViewBag.Engineers)
+        <h2>Treats List</h2>
+        <h6>*Click on Treat to See Details* </h6>
+        @foreach (Treat treat in @ViewBag.Treats)
         {
-          <li>@Html.ActionLink($"{ engineer.Name }", "Details", "Engineers", new { id = engineer.EngineerId }, new { @class = "linkWordColor" })</li>
+          <li>@Html.ActionLink($"{ treat.Name }", "Details", "Treats", new { id = treat.TreatId }, new { @class = "linkWordColor" })</li>
         }
       }
     </div>
     <div class = "col">
-      @if (ViewBag.Machines.Count == 0) 
+      @if (ViewBag.Flavors.Count == 0) 
       {
-        <h3>No Machine Yet!</h3>
+        <h3>No flavor Yet!</h3>
       }
       else
       {
-        <h2>Machine List</h2>
-        <h6>*Click on Machine to See Details* </h6>
-        @foreach (Machine machine in ViewBag.Machines)
+        <h2>Flavors List</h2>
+        <h6>*Click on Flavor to See Details* </h6>
+        @foreach (Flavor flavor in ViewBag.Flavors)
         {
-          <li>@Html.ActionLink($"{ machine.Name }", "Details", "Machines", new { id = machine.MachineId }, new { @class = "linkWordColor" })</li>
+          <li>@Html.ActionLink($"{ flavor.Name }", "Details", "Flavors", new { id = flavor.FlavorId }, new { @class = "linkWordColor" })</li>
         }
       }
     </div>
   </div>
-</div> -->
+</div>
