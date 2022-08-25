@@ -3,7 +3,7 @@
 }
 
 @using PierreBakery.Models;
-@model PierreBakery.Models.Flavor;
+@model List<PierreBakery.Models.Flavor>;
 
 <div class = "container">
   <h2>Flavors</h2>
@@ -21,7 +21,7 @@
       else
       {
       <h5>Click on Flavor to See Details</h5>
-      @foreach (flavor flavor in Model)
+      @foreach (Flavor flavor in Model)
       {
         <li>@Html.ActionLink($"{ flavor.Name }", "Details", new { id = flavor.FlavorId }, new { @class ="linkWordColor" })</li>
       }
