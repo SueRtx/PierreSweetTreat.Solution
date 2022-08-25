@@ -22,12 +22,10 @@ namespace PierreBakery.Controllers
       _db = db;
     }
 
-    public async Task<ActionResult> Index()
+    public ActionResult Index ()
     {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-      var userFlavors = _db.Flavors.Where(entry => entry.User.Id == currentUser.Id).ToList();
-      return View(userFlavors);
+      List<Flavor> model = _db.Flavors.ToList();
+      return View(model);
     }
 
     [Authorize]
@@ -38,19 +36,18 @@ namespace PierreBakery.Controllers
     }
 
     [HttpPost]
-    public async Task<ActionResult> Create(Flavor flavor)
+    public async Task<ActionResult> Create(Flavor flavor, int TreatId)
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
       flavor.User = currentUser;
       _db.Flavors.Add(flavor);
       _db.SaveChanges();
-
       if (TreatId != 0)
-    {
-        _db.TreatFlavor.Add(new TreatFlavor() { TreatId = TreatId, FlavorId = flavorrecipe.FlavorId });
-    }
-    _db.SaveChanges();
+      {
+        _db.TreatFlavor.Add(new TreatFlavor() { TreatId = TreatId, FlavorId = flavor.FlavorId });
+      }
+      _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
@@ -120,6 +117,7 @@ namespace PierreBakery.Controllers
       return RedirectToAction("Index");
     }
 
+    [Authorize]
     [HttpPost]
     public ActionResult DeleteTreat(int joinId)
     {
