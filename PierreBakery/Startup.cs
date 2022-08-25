@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Identity;
-using Factory.Models;
+using PierreBakery.Models;
 
-namespace Factory
+namespace PierreBakery
 {
   public class Startup
   {
@@ -26,12 +26,11 @@ namespace Factory
       services.AddMvc();
 
       services.AddEntityFrameworkMySql()
-        .AddDbContext<FactoryContext>(options => options
+        .AddDbContext<PierreBakeryContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
 
-      //new code
       services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<FactoryContext>()
+                .AddEntityFrameworkStores<PierreBakeryContext>()
                 .AddDefaultTokenProviders();
       services.Configure<IdentityOptions>(options =>
     {
@@ -48,12 +47,10 @@ namespace Factory
     {
       app.UseDeveloperExceptionPage();
 
-      //new code
       app.UseAuthentication(); 
 
       app.UseRouting();
 
-      //new code
       app.UseAuthorization();
 
       app.UseEndpoints(routes =>

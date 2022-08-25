@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Factory
+namespace PierreBakery
 {
   public class Program
   {
