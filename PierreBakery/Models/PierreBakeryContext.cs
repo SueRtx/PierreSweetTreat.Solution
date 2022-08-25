@@ -1,19 +1,19 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-// namespace Factory.Models
-// {
-//   public class FactoryContext : IdentityDbContext<ApplicationUser>
-//   {
-//     public DbSet<Engineer> Engineers { get; set; }
-//     public DbSet<Machine> Machines { get; set; }
-//     public DbSet<EngineerMachine> EngineerMachine { get; set; }
+namespace PierreBakery.Models
+{
+  public class PierreBakeryContext : IdentityDbContext<ApplicationUser>
+  {
+    public DbSet<Treat> Treats { get; set; }
+    public DbSet<Flavor> Flavors { get; set; }
+    public DbSet<TreatFlavor> TreatFlavor { get; set; }
 
-//     public FactoryContext(DbContextOptions options) : base(options) { }
+    public PierreBakeryContext(DbContextOptions options) : base(options) { }
 
-//     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//     {
-//       optionsBuilder.UseLazyLoadingProxies();
-//     }
-//   }
-// }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+      optionsBuilder.UseLazyLoadingProxies();
+    }
+  }
+}

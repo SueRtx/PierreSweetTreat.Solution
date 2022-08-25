@@ -1,12 +1,12 @@
-// namespace Factory.Models
-// {
-//   public class EngineerMachine
-//   {       
-//     public int EngineerMachineId { get; set; }
-//     public int EngineerId { get; set; }
-//     public int MachineId { get; set; }
+namespace PierreBakery.Models
+{
+  public class TreatFlavor
+  {       
+    public int TreatFlavorId { get; set; }
+    public int TreatId { get; set; }
+    public int FlavorId { get; set; }
     
-//     public virtual Engineer Engineer { get; set; }
-//     public virtual Machine Machine { get; set; }
-//   }
-// }
+    public virtual Treat Treat { get; set; }
+    public virtual Flavor Flavor { get; set; }
+  }
+}
