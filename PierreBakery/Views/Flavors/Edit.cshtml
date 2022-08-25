@@ -2,17 +2,17 @@
   Layout = "_Layout";
 }
 
-<!-- @model Factory.Models.Machine
+@model PierreBakery.Models.Flavor
 
 <div class = "container">
-  <h2>Editing Machine: @Html.DisplayFor(model => model.Name)</h2>
+  <h2>Editing Flavor: @Html.DisplayFor(model => model.Name)</h2>
 
   <div class = "infoBox">
     @using (Html.BeginForm())
     {
-      @Html.HiddenFor(model => model.MachineId)
+      @Html.HiddenFor(model => model.FlavorId)
 
-      <h3>Machine @Html.LabelFor(model => model.Name)
+      <h3>Flavor @Html.LabelFor(model => model.Name)
       @Html.EditorFor(model => model.Name)</h3>
       <br />
       <input type = "submit" value = "Save" class = "btn2" />
@@ -20,4 +20,4 @@
     @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
   </div>
 </div>
- -->
+

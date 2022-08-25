@@ -2,10 +2,10 @@
   Layout = "_Layout";
 }
 
-<!-- @model Factory.Models.Machine
+@model PierreBakery.Models.Flavor
 
 <div class = "container">
-  <h2>Add Machine</h2>
+  <h2>Add Flavor</h2>
 
   <div class = "infoBox">
     @using (Html.BeginForm())
@@ -13,8 +13,8 @@
       <h3>@Html.LabelFor(model => model.Name)
       @Html.TextBoxFor(model => model.Name, new { required = "required" , @class = "wordLink"})</h3>
       <br />
-      <input type = "submit" value = "Add Machine" class = "btn2" />
+      <input type = "submit" value = "Add Flavor" class = "btn2" />
     }
     @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
   </div>
-</div> -->
+</div>

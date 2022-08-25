@@ -2,13 +2,13 @@
   Layout = "_Layout";
 }
 
-<!-- @model Factory.Models.Machine
+@model PierreBakery.Models.Flavor
 
 <div class = "container">
   <div class = "infoBox">
     <h2>Machine @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h2>
 
-    <h3>Are you sure you want to <strong>DELETE</strong> this Machine?</h3>
+    <h3>Are you sure you want to <strong>DELETE</strong> this Flavor?</h3>
     <br/>
     @using (Html.BeginForm())
     {
@@ -16,4 +16,4 @@
     }
     @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
   </div>
-</div> -->
+</div>

@@ -2,29 +2,29 @@
   Layout = "_Layout";
 }
 
-<!-- @using Factory.Models;
-@model List<Factory.Models.Machine>;
+@using PierreBakery.Models;
+@model PierreBakery.Models.Flavor;
 
 <div class = "container">
-  <h2>Machines</h2>
+  <h2>Flavors</h2>
   
-  @Html.ActionLink("Add New Machine", "Create", null, null, new { @class ="pageLink" })
+  @Html.ActionLink("Add New Flavor", "Create", null, null, new { @class ="pageLink" })
   @Html.ActionLink("Home", "Index", "Home", null, new { @class ="pageLink" })
 
   <div class = "indexBox">
-    <img class = "image1" src = "~/image/machine3.png">
+    <img class = "image1" src = "~/image/Flavor3.png">
 
     @if (@Model.Count == 0)
       {
-        <h4>No Machines Yet!</h4>
+        <h4>No Flavors Yet!</h4>
       } 
       else
       {
-      <h5>Click on Machine to See Details</h5>
-      @foreach (Machine machine in Model)
+      <h5>Click on Flavor to See Details</h5>
+      @foreach (Flavor flavor in Model)
       {
-        <li>@Html.ActionLink($"{ machine.Name }", "Details", new { id = machine.MachineId }, new { @class ="linkWordColor" })</li>
+        <li>@Html.ActionLink($"{ flavor.Name }", "Details", new { id = flavor.FlavorId }, new { @class ="linkWordColor" })</li>
       }
     }
   </div> 
-</div> -->
+</div>
