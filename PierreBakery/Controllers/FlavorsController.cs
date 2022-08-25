@@ -11,7 +11,6 @@ using System.Security.Claims;
 
 namespace PierreBakery.Controllers
 {
-  [Authorize]
   public class FlavorsController : Controller
   {
     private readonly PierreBakeryContext _db;
@@ -29,9 +28,9 @@ namespace PierreBakery.Controllers
       var currentUser = await _userManager.FindByIdAsync(userId);
       var userFlavors = _db.Flavors.Where(entry => entry.User.Id == currentUser.Id).ToList();
       return View(userFlavors);
-      // return View(_db.Flavors.ToList());
     }
 
+    [Authorize]
     public ActionResult Create()
     {
       ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
@@ -47,11 +46,11 @@ namespace PierreBakery.Controllers
       _db.Flavors.Add(flavor);
       _db.SaveChanges();
 
-    //   if (TreatId != 0)
-    // {
-    //     _db.TreatFlavor.Add(new TreatFlavor() { TreatId = TreatId, FlavorId = flavorrecipe.FlavorId });
-    // }
-    // _db.SaveChanges();
+      if (TreatId != 0)
+    {
+        _db.TreatFlavor.Add(new TreatFlavor() { TreatId = TreatId, FlavorId = flavorrecipe.FlavorId });
+    }
+    _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
@@ -65,6 +64,7 @@ namespace PierreBakery.Controllers
       return View(thisFlavor);
     }
 
+    [Authorize]
     public ActionResult Edit(int id)
     {
       var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
@@ -72,6 +72,7 @@ namespace PierreBakery.Controllers
       return View(thisFlavor);
     }
 
+    [Authorize]
     [HttpPost]
     public ActionResult Edit(Flavor flavor, int TreatId)
     {
@@ -84,6 +85,7 @@ namespace PierreBakery.Controllers
       return RedirectToAction("Index");
     }
 
+    [Authorize]
     public ActionResult AddTreat(int id)
     {
       var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
@@ -102,6 +104,7 @@ namespace PierreBakery.Controllers
       return RedirectToAction("Index");
     }
 
+    [Authorize]
     public ActionResult Delete(int id)
     {
       var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);

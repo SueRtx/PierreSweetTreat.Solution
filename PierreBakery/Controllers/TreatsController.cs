@@ -11,7 +11,6 @@ using System.Security.Claims;
 
 namespace PierreBakery.Controllers
 {
-  [Authorize]
   public class TreatsController : Controller
   {
     private readonly PierreBakeryContext _db;
@@ -31,11 +30,11 @@ namespace PierreBakery.Controllers
       return View(userTreats);
     }
 
+    [Authorize]
     public ActionResult Create()
     {
       return View();
     }
-
 
     [HttpPost]
     public async Task<ActionResult> Create(Treat treat)
@@ -58,6 +57,7 @@ namespace PierreBakery.Controllers
       return View(thisTreat);
     }
     
+    [Authorize]
     public ActionResult Edit(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
@@ -72,6 +72,7 @@ namespace PierreBakery.Controllers
       return RedirectToAction("Index");
     }
 
+    [Authorize]
     public ActionResult Delete(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
@@ -87,6 +88,7 @@ namespace PierreBakery.Controllers
       return RedirectToAction("Index");
     }
 
+    [Authorize]
     public ActionResult AddFlavor(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
