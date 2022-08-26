@@ -1,4 +1,4 @@
-# Pierre's Sweet and Savoy Treats (C# Project 5)
+# Pierre's Sweet and Savory Treats (C# Project 5)
 
 #### By Sue Roberts
 
@@ -25,7 +25,7 @@
 * Clone repository: $ git clone https://github.com/SueRtx/  
 * Open Vs Code: $ code .   
 * Open TERMINAL in Vs Code
-* Go to PierreBakery directory: $ cd PierreBakery
+* Go to SavorySweets directory: $ cd SavorySweets
 * Create file at root directory: $ touch "appsettings.json"
 * Add following code to "appsettings.json" (Add your own password)
 ```
