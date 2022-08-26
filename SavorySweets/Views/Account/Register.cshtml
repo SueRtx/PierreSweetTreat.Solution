@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+
+@using SavorySweets.ViewModels
+
+@model RegisterViewModel
+
+<h2>Register a New User</h2>
+<br />
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    <h5>@Html.LabelFor(user => user.Email)
+    @Html.TextBoxFor(user=> user.Email)</h5>
+
+    <h5>@Html.LabelFor(user=> user.Password)
+    @Html.PasswordFor(user=> user.Password)</h5>
+
+    <h5>@Html.LabelFor(user=> user.ConfirmPassword)
+    @Html.PasswordFor(user=> user.ConfirmPassword)</h5>
+
+    <input type="submit" value="Register" class="btn" />
+}

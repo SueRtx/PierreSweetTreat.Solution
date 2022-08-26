@@ -1,0 +1,53 @@
+@{
+  Layout = "_Layout";
+}
+
+@model SavorySweets.Models.Treat
+
+<div class = "container">
+  <h2>Treat Details</h2>
+  
+  <div class = "infoBox">
+    @Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink" })
+    @Html.ActionLink("Treat List", "Index", null, null, new { @class = "pageLink" })
+    
+    @Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId }, new { @class = "pageLink" })
+    @Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId }, new { @class = "pageLink" })
+
+    <h4>@Html.Label("Treat Name"): @Html.DisplayFor(model => model.Name)
+<br />
+    @if (ViewBag.Flavors.Count == 0) 
+    {
+      <h3>No Flavor to Add Yet!</h3>
+      @Html.ActionLink("Add Flavor to Bakery", "Create", "Flavors", null, new { @class = "pageLink2" })
+    }
+    else
+    {
+    @Html.ActionLink("Add flavor to Treat", "AddFlavor", new { id = Model.TreatId }, new {@class = "pageLink2"})
+    }
+  </div>
+
+  <div class = "detailBox">
+    <img class = "image2" src = "~/image/candy4.png"> 
+
+    @if(@Model.JoinEntities.Count == 0)
+    {
+      <h3>Treat Does Not Contain Any Flavor!</h3>
+    }
+    else
+    {
+      <h3>Flavors for this Treat</h3>
+      <ul>
+      @foreach(var join in Model.JoinEntities)
+      {
+        <li>@join.Flavor.Name</li>
+        @using (Html.BeginForm("DeleteFlavor", "Treats"))
+        {
+          @Html.Hidden("joinId", @join.TreatFlavorId)
+          <input type = "submit" value = "Delete" class = "btn3"/>
+        }  
+      }
+      </ul>
+    }
+  </div>
+</div>
