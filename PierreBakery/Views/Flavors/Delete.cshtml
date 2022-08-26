@@ -5,8 +5,9 @@
 @model PierreBakery.Models.Flavor
 
 <div class = "container">
+  <h2>Flavor @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h2>
   <div class = "infoBox">
-    <h2>Machine @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h2>
+    
 
     <h3>Are you sure you want to <strong>DELETE</strong> this Flavor?</h3>
     <br/>

@@ -14,11 +14,11 @@
   @Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId }, new { @class ="pageLink" })
   @Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId}, new { @class = "pageLink" })
 
-  <h3> Flavor @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+  <h4> Flavor @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h4>
 
     @if (ViewBag.Treats.Count == 0)
     {
-      <h4>No Treat to Add Yet!</h4>
+      <h3>No Treat to Add Yet!</h3>
       @Html.ActionLink("Add Treat to Factory", "Create", "Treats", null, new { @class = "pageLink2" })
     }
     else
@@ -28,15 +28,15 @@
   </div>
 
   <div class = "detailBox">
-    <!-- <img class = "image1" src = "~/image/Flavor2.png"> -->
+    <img class = "image1" src = "~/image/candy5.png"> 
 
     @if(@Model.JoinEntities.Count == 0)
     {
-      <h5>No Treat for This Flavor!</h5>
+      <h3>No Treat for This Flavor!</h3>
     }
     else
     {
-      <h5>Treats List for <strong>@Html.DisplayFor(model => model.Name)</strong></h5>
+      <h3>Treats List for @Html.DisplayFor(model => model.Name)</h3>
     <ul>
     @foreach(var join in Model.JoinEntities)
     {

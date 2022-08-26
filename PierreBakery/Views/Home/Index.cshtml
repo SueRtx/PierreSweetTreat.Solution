@@ -7,7 +7,7 @@
 <div class = "container">
   @if (User.Identity.IsAuthenticated)
   {
-  <h2>Welcome @User.Identity.Name !</h2>
+  <h2>Welcome @User.Identity.Name</h2>
   @using (Html.BeginForm("LogOff", "Account"))
     {
       <input type="submit" class="btn btn-primary" value="Log Out"/>

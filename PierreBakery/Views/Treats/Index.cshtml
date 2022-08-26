@@ -11,15 +11,15 @@
   @Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink" })
   
   <div class = "indexBox">
-    <!-- <img class = "image1" src = "~/image/machine3.png" > -->
+    <img class = "image1" src = "~/image/candy6.jpg" >
 
     @if (@Model.Count == 0)
     {
-      <h2>Treat List is EMPTY!</h2>
+      <h3>Treat List is EMPTY!</h3>
     } 
     else
     {
-      <h6>Click on Treat to See Details</h6>
+      <h3>Click on Treat to See Details</h3>
       @foreach(Treat treat in Model)
       {
         <li>@Html.ActionLink($"{ treat.Name }", "Details", new { id = treat.TreatId }, new { @class = "linkWordColor" }) 
