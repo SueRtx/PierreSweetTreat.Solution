@@ -9,20 +9,20 @@ body {
 .title {
   padding: 1%;
   color: #aaccf6;
-  background-color: #e3f2f7;
+  background-color: #aaccf6;
   background-image: linear-gradient(45deg, #1d20e8, #0f0239, #1d20e8 );
   background-size: 100%;
   letter-spacing: 5px;
-  text-shadow: 3px 3px 3px #fa0f0f;
+  text-shadow: 3px 3px 3px #c90808;
 }
 
 h2 {
-  margin-top: 3%;
+  margin-top: 1%;
   font-weight: bolder;
   letter-spacing: 2px;
   text-align: center;
-  color: #140351;
-  text-shadow: 2px 2px 2px #fa0f0f;
+  color: #0f0239;
+  text-shadow: 2px 2px 2px #c90808;
 }
 
 h3 {
@@ -30,7 +30,7 @@ h3 {
   letter-spacing: 2px;
   font-weight: bolder;
   text-align: center;
-  color: #d1d4f8;
+  color: #aaccf6;
   text-shadow: 2px 2px 2px #fd2419;
 }
 
@@ -45,17 +45,17 @@ h4 {
   text-shadow: 1px 1px 1px #f41e13;
 }
 
-h5, h6{
+h5 {
   font-family: Arial;
   font-weight: bold;
   margin-top: 1%;
   letter-spacing: 2px;
   text-align: center;
-  color: #e3f2f7;
+  color: #aaccf6;
 }
 
 .wordLink {
-  color: #0d3f05;
+  color: #2f42ed;
   font-family:  Arial;
   background-color: #aaccf6;
 }
@@ -82,8 +82,8 @@ h5, h6{
 
 img {
   margin-top: 1%;
-  margin-left: -1.6%;
-  width: 103.2%;
+  margin-left: -1.4%;
+  width: 102.7%;
   border: 5px solid #d5def3
 }
 
@@ -103,15 +103,15 @@ img {
 
 .col {
   background-image: linear-gradient(45deg, #211d9c, #6c7dbd, #211d9c );
-  padding: 1% 5% ;
+  padding: 1% 5% ; 
   border: 5px solid #d5def3;  
   font-size: 20px;
   text-align: left;
   font-weight: bold;
 }
 
-.infoBox {
-  margin-top: -.9%;
+ .infoBox {
+  margin-top: 1%;
   padding: 3% 6%;
   background-color: #6c7dbd;
   border: 25px solid #211d9c;
@@ -124,9 +124,9 @@ img {
   height: 300px;
   margin-top: 9%;
   padding: 2% 6% 2% 6%;
-  color: #e9990f;
+  color: #aaccf6;
   background-color: #211d9c; 
-  font-size: 20px;
+  font-size: 30px;
   text-align: left;
   font-weight: bold;
 }
@@ -135,7 +135,7 @@ img {
   box-sizing: content-box;  
   height: 273px;
   padding: 2% 6% 2% 6%;
-  color: #e9990f;
+  color: #aaccf6;
   background-color:#211d9c; 
   font-size: 20px;
   text-align: left;
@@ -164,32 +164,37 @@ img {
   color: #f52121;
 }
 
+ .btn:hover {
+  background-color:#f52121; 
+  color: #3a59f5;
+}
+
 .btn {
-  border: 2px solid #1a780a;
+  border: 2px solid #f31c09;
+  padding: 2px;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 20px;
+  color: #f31c09;
+  background-image: linear-gradient(45deg, #eee022,#efedac, #eee022);
+  width: 22%;
+  letter-spacing: 5px;
+}
+
+.btn2 {
+  float: left;
+  margin-left: 23%;
+  border: 2px solid #211d9c;
   padding: 2px;
   font-family: Arial;
   font-weight: bold;
   font-size: 20px;
   color: #1b0f01;
   background-image: linear-gradient(45deg, #eee022,#efedac, #eee022);
-  width: 20%;
-  letter-spacing: 5px;
-  text-shadow: 2px 2px 2px #f0c725;
-}
-
-.btn2 {
-  float: left;
-  margin-left: 23%;
-  border: 2px solid #1a780a;
-  padding: 2px;
-  font-family: Arial;
-  text-shadow: 2px 2px 2px #f0c725;
-  font-size: 20px;
-  font-weight: bold;
-  color:  #041301;
   width: 22%;
   letter-spacing: 5px;
-  background-image: linear-gradient(45deg, #eee022,#efedac, #eee022);
+  text-shadow: 2px 2px 2px #f0c725;
+  border-radius: 5%;
 }
 
 .btn3 {
@@ -210,8 +215,7 @@ img {
   font-family: Arial;
   border: 2px solid #1c17ba;
   background-color: #f4f09c;
-  /* background-image: linear-gradient(45deg, #eee022,#efedac, #eee022); */
-  border-radius: 30%;
+  border-radius: 10%;
 }
 
 .pageLink3 {
@@ -221,8 +225,8 @@ img {
   float: left;
   margin-left: 40%;
   width: 20%;
-  border: 3px solid #e5ed10;
-  padding: 3px;
+  border: 2px solid #f62109;
+  padding: 2px;
   margin-top: 1%;
   text-align: center;
   font-weight: bold;

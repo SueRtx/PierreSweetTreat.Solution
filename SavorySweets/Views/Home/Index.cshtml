@@ -10,7 +10,7 @@
   <h2>Welcome @User.Identity.Name</h2>
   @using (Html.BeginForm("LogOff", "Account"))
     {
-      <input type="submit" class="btn btn-primary" value="Log Out"/>
+      <input type="submit" class="btn btn-primary" value="LOGOUT"/>
     }
   }
   else
@@ -33,7 +33,7 @@
       else
       {
         <h2>Treats List</h2>
-        <h6>*Click on Treat to See Details* </h6>
+        <h5>*Click on Treat to See Details* </h5>
         @foreach (Treat treat in @ViewBag.Treats)
         {
           <li>@Html.ActionLink($"{ treat.Name }", "Details", "Treats", new { id = treat.TreatId }, new { @class = "linkWordColor" })</li>
@@ -48,7 +48,7 @@
       else
       {
         <h2>Flavors List</h2>
-        <h6>*Click on Flavor to See Details* </h6>
+        <h5>*Click on Flavor to See Details* </h5>
         @foreach (Flavor flavor in ViewBag.Flavors)
         {
           <li>@Html.ActionLink($"{ flavor.Name }", "Details", "Flavors", new { id = flavor.FlavorId }, new { @class = "linkWordColor" })</li>
