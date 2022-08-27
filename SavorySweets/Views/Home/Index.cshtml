@@ -4,7 +4,7 @@
 
 @using SavorySweets.Models
 
-<div class = "container">
+<div class = "homeBox">
   @if (User.Identity.IsAuthenticated)
   {
   <h2>Welcome @User.Identity.Name</h2>
@@ -15,45 +15,44 @@
   }
   else
   {
-    <h5 class = "linkWordColor">@Html.ActionLink("Create/Login Account", "Index", "Account")</h5>
+    <h5>@Html.ActionLink("Create/Login Account", "Index", "Account", null, new { @class = "linkWordColor" })</h5>
   }
+  
+  <img src = "~/image/candy1.png">
 
   @Html.ActionLink("Add Treat", "Create", "Treats", null, new { @class = "pageLink" })
   @Html.ActionLink("Add Flavor", "Create", "Flavors", null, new { @class = "pageLink" })
-
-  <img src = "~/image/candy1.png">
-<br />
-
-  <div class = "row">
-    <div class = "col">
-      @if (ViewBag.Treats.Count == 0)
+  <br />
+</div>
+<div class = "row">
+  <div class = "col">
+    @if (ViewBag.Treats.Count == 0)
+    {
+      <h4>No Treat Yet!</h4>
+    }
+    else
+    {
+      <h4>Treats List</h4>
+      <h5>*Click on Treat to See Details* </h5>
+      @foreach (Treat treat in @ViewBag.Treats)
       {
-        <h3>No Treat Yet!</h3>
+        <li>@Html.ActionLink($"{ treat.Name }", "Details", "Treats", new { id = treat.TreatId }, new { @class = "linkWordColor" })</li>
       }
-      else
+    }
+  </div>
+  <div class = "col">
+    @if (ViewBag.Flavors.Count == 0) 
+    {
+      <h4>No Flavor Yet!</h4>
+    }
+    else
+    {
+      <h4>Flavors List</h4>
+      <h5>*Click on Flavor to See Details* </h5>
+      @foreach (Flavor flavor in ViewBag.Flavors)
       {
-        <h2>Treats List</h2>
-        <h5>*Click on Treat to See Details* </h5>
-        @foreach (Treat treat in @ViewBag.Treats)
-        {
-          <li>@Html.ActionLink($"{ treat.Name }", "Details", "Treats", new { id = treat.TreatId }, new { @class = "linkWordColor" })</li>
-        }
+        <li>@Html.ActionLink($"{ flavor.Name }", "Details", "Flavors", new { id = flavor.FlavorId }, new { @class = "linkWordColor" })</li>
       }
-    </div>
-    <div class = "col">
-      @if (ViewBag.Flavors.Count == 0) 
-      {
-        <h3>No flavor Yet!</h3>
-      }
-      else
-      {
-        <h2>Flavors List</h2>
-        <h5>*Click on Flavor to See Details* </h5>
-        @foreach (Flavor flavor in ViewBag.Flavors)
-        {
-          <li>@Html.ActionLink($"{ flavor.Name }", "Details", "Flavors", new { id = flavor.FlavorId }, new { @class = "linkWordColor" })</li>
-        }
-      }
-    </div>
+    }
   </div>
 </div>

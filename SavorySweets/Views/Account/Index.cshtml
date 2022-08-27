@@ -4,26 +4,27 @@
 
 @using System.Security.Claims
 
-<div class = "container">
-  <h2>Authentication with Identity</h2>
-  <h5>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink3" })</h5>
-
-  <div class = "indexBox">
+  <h2>Authentication with Identity @Html.ActionLink("Home", "Index", "Home", null, new { @class ="pageLink4" })</h2>
+  
+  <div class = "infoBox">
     @if (User.Identity.IsAuthenticated)
     {
-      <h3>Hello @User.Identity.Name!</h3> <br />
+      <h3>Hello @User.Identity.Name!</h3> 
       @using (Html.BeginForm("LogOff", "Account"))
     
       {
-          <input type="submit" class="pageLink3" value="L O G O U T" />
+          <input type="submit" class="btn" value="Logout" />
       }
     }
     else
     {
       <h3>Register or Login to Your Account.</h3>
-      <br />
-      <h5>@Html.ActionLink("Register", "Register", null, null, new { @class = "pageLink" })</h5>
-      <h5>@Html.ActionLink("Log in", "Login", null, null, new { @class = "pageLink" })</h5>
+    
+      @Html.ActionLink("Register", "Register", null, null, new { @class = "pageLink" })
+      @Html.ActionLink("Login", "Login", null, null, new { @class = "pageLink" })
+
+      @* <img class = "image" src = "~/image/candy2.png">  *@
     }
+    <img class = "image" src = "~/image/candy2.png"> 
   </div>
-</div>
+

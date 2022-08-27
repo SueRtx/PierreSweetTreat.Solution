@@ -5,23 +5,21 @@
 @using SavorySweets.ViewModels
 @model RegisterViewModel
 
-<div class = "container">
-  <h2>Register New User</h2>
-  <br />
-  <div class = "detailBox">
-    @using (Html.BeginForm("Register", "Account", FormMethod.Post))
-    {<img class = "image2" src = "~/image/candy6.jpg"> 
-    @Html.LabelFor(user => user.Email)
-    @Html.TextBoxFor(user=> user.Email)
-    <br />
-    @Html.LabelFor(user=> user.Password)
-    @Html.PasswordFor(user=> user.Password)<br />
+<h2>Register New User @Html.ActionLink("Home", "Index", "Home", null, new { @class ="pageLink4" })</h2>
 
-   @Html.LabelFor(user=> user.ConfirmPassword)
-    @Html.PasswordFor(user=> user.ConfirmPassword)
-    <br />
+<div class = "detailBox">
+  <img class = "image1" src = "~/image/candy6.jpg"> 
 
+  @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+  {
+    <br />
+    <p>@Html.LabelFor(user => user.Email) 
+    @Html.TextBoxFor(user=> user.Email)</p>
+    <p> @Html.LabelFor(user=> user.Password)
+    @Html.PasswordFor(user=> user.Password)</p>
+    <p>@Html.LabelFor(user=> user.ConfirmPassword)
+    @Html.PasswordFor(user=> user.ConfirmPassword)</p>
+    <br />
     <input type="submit" value="Register" class="btn2" />
   }
-  </div>
 </div>

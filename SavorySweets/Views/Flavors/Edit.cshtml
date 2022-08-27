@@ -4,20 +4,19 @@
 
 @model SavorySweets.Models.Flavor
 
-<div class = "container">
-  <h2>Editing Flavor: @Html.DisplayFor(model => model.Name)</h2>
-infoBox
-  <div class = "infoBox">
-    @using (Html.BeginForm())
-    {
-      @Html.HiddenFor(model => model.FlavorId)
+<h2>Editing Flavor: @Html.DisplayFor(model => model.Name) @Html.ActionLink("Home", "Index", "Home", null, new { @class ="pageLink4" })</h2>
 
-      <h3>Flavor @Html.LabelFor(model => model.Name)
-      @Html.EditorFor(model => model.Name)</h3>
-      <br />
-      <input type = "submit" value = "Save" class = "btn2" />
-    }
-    @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
-  </div>
-</div>
+<div class = "infoBox">
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.FlavorId)
+
+    <h3>Flavor @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)</h3>
+    <br />
+    <input type = "submit" value = "Save" class = "btn2" />
+  }
+  @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
+</div><img class = "image" src = "~/image/candy11.png"> 
+
 
