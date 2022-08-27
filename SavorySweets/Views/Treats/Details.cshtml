@@ -3,8 +3,7 @@
 }
 
 @model SavorySweets.Models.Treat
-
-<h2>@Html.Label("Treat Name"): @Html.DisplayFor(model => model.Name) @Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink4" }) </h2>
+<h2>@Html.Label("Treat Name"): @Html.DisplayFor(model => model.Name) @Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink4" })</h2>
 
 <div class = "infoBox">
   @Html.ActionLink("Treat List", "Index", null, null, new { @class = "btn" })

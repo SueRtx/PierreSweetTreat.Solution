@@ -3,10 +3,9 @@
 }
 
 @model SavorySweets.Models.Flavor
-
 <h2>Flavor @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name) @Html.ActionLink("Home", "Index", "Home", null, new { @class ="pageLink4" })</h2>
+
 <div class = "infoBox">
-  
   <h3>Are you sure you want to <strong>DELETE</strong> this Flavor?</h3>
   <br/>
   @using (Html.BeginForm())
@@ -15,4 +14,5 @@
   }
   @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
 </div>
+
 <img class = "image" src = "~/image/candy12.png"> 

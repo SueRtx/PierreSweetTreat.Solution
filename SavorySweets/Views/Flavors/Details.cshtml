@@ -3,15 +3,13 @@
 }
 
 @model SavorySweets.Models.Flavor
-
 <h2> Flavor @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
-  @Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink4" })
-</h2>
+  @Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink4" })</h2>
 
 <div class = "infoBox">
-@Html.ActionLink("Flavor List", "Index", null, null, new { @class = "btn" })
-@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId }, new { @class ="btn" })
-@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId}, new { @class = "btn" })
+  @Html.ActionLink("Flavor List", "Index", null, null, new { @class = "btn" })
+  @Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId }, new { @class ="btn" })
+  @Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId }, new { @class = "btn" })
 
   @if (ViewBag.Treats.Count == 0)
   {
@@ -40,6 +38,7 @@
       @using (Html.BeginForm("DeleteTreat", "Flavors"))
       {
         @Html.Hidden("joinId", @join.TreatFlavorId)
+
         <input type = "submit" value = "Delete"  class = "btn3" />
       }
     }

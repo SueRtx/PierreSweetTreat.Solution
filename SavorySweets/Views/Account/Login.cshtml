@@ -5,19 +5,19 @@
 @using SavorySweets.ViewModels
 @model LoginViewModel
 
-  <h2>Login to Your Account @Html.ActionLink("Home", "Index", "Home", null, new { @class ="pageLink4" })</h2>
+<h2>Login to Your Account @Html.ActionLink("Home", "Index", "Home", null, new { @class ="pageLink4" })</h2>
 
-  <div class = "detailBox">
-    <img class = "image1" src = "~/image/candy3.png"> 
-    @using (Html.BeginForm())
-    {
-      <br />
-      <p>@Html.LabelFor(m => m.Email)
-      @Html.TextBoxFor(m => m.Email)</p>
+<div class = "detailBox">
+  <img class = "image1" src = "~/image/candy3.png"> 
+  @using (Html.BeginForm())
+  {
+    <br />
+    <p>@Html.LabelFor(m => m.Email)
+    @Html.TextBoxFor(m => m.Email)</p>
 
-      <p>@Html.LabelFor(m => m.Password)
-      @Html.PasswordFor(m => m.Password)</p>
-      <br />
-      <input type="submit" value="Login" class="btn2" />
-    }
-  </div>
+    <p>@Html.LabelFor(m => m.Password)
+    @Html.PasswordFor(m => m.Password)</p>
+    <br />
+    <input type="submit" value="Login" class="btn2" />
+  }
+</div>

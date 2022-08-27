@@ -48,9 +48,9 @@ namespace SavorySweets.Controllers
     {
       ViewBag.Flavors = _db.Flavors.ToList();
       var thisTreat = _db.Treats
-          .Include(treat => treat.JoinEntities)
-          .ThenInclude(join => join.Flavor)
-          .FirstOrDefault(treat => treat.TreatId == id);
+        .Include(treat => treat.JoinEntities)
+        .ThenInclude(join => join.Flavor)
+        .FirstOrDefault(treat => treat.TreatId == id);
       return View(thisTreat);
     }
     

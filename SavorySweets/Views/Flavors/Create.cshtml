@@ -3,17 +3,17 @@
 }
 
 @model SavorySweets.Models.Flavor
+<h2>Add Flavor @Html.ActionLink("Home", "Index", "Home", null, new { @class ="pageLink4" })</h2>
 
-  <h2>Add Flavor @Html.ActionLink("Home", "Index", "Home", null, new { @class ="pageLink4" })</h2>
+<div class = "infoBox">
+  @using (Html.BeginForm())
+  {
+    <h3>@Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name, new { required = "required" , @class = "wordLink"})</h3>
+    <br />
+    <input type = "submit" value = "Add Flavor" class = "btn2" />
+  }
+  @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
 
-  <div class = "infoBox">
-    @using (Html.BeginForm())
-    {
-      <h3>@Html.LabelFor(model => model.Name)
-      @Html.TextBoxFor(model => model.Name, new { required = "required" , @class = "wordLink"})</h3>
-      <br />
-      <input type = "submit" value = "Add Flavor" class = "btn2" />
-    }
-    @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
-    <img class = "image" src = "~/image/candy9.png"> 
-  </div>
+  <img class = "image" src = "~/image/candy9.png"> 
+</div>
