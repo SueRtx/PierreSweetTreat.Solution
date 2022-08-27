@@ -2,7 +2,7 @@
 
 #### By Sue Roberts
 
-####   
+####  MVC web application to manage their sweet and savory treats with user authentication . 
 
 ## Technologies Used
 
@@ -10,19 +10,19 @@
 * .NET 5.0
 * SQL Workbench
 * Entity Framework
-* ASP.NET
-* REPL
+* ASP.Net Core Identity
+* Razor
 * CSS
 * Bootstrap
 * HTML
 
 ## Description
 
-
+The application has user authentication. Users are able to log in and log out. Only logged in users could create, update and delete. All users are  able to read without login. There are many-to-many relationships between Treats and Flavors. A treat can have many flavors and a flavor can have many treats.  Users are able to navigate to a splash page that lists all treats and flavors and click on an individual treat or flavor to see all the treats/flavors that belong to it.
 
 ## Setup/Installation Requirements
 
-* Clone repository: $ git clone https://github.com/SueRtx/  
+* Clone repository: $ git clone https://github.com/SueRtx/PierreSweetTreat.solution.git  
 * Open Vs Code: $ code .   
 * Open TERMINAL in Vs Code
 * Go to SavorySweets directory: $ cd SavorySweets
