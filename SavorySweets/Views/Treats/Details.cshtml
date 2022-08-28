@@ -3,6 +3,7 @@
 }
 
 @model SavorySweets.Models.Treat
+
 <h2>@Html.Label("Treat Name"): @Html.DisplayFor(model => model.Name) @Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink4" })</h2>
 
 <div class = "infoBox">
@@ -13,7 +14,7 @@
   @if (ViewBag.Flavors.Count == 0) 
   {
     <h4>No Flavor to Add Yet!</h4>
-    @Html.ActionLink("Add Flavor to Bakery", "Create", "Flavors", null, new { @class = "pageLink2" })
+    @Html.ActionLink("Add Flavor to Store", "Create", "Flavors", null, new { @class = "pageLink2" })
   }
   else
   {

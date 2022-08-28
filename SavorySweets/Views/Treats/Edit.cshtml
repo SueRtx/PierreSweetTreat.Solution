@@ -3,17 +3,18 @@
 }
 
 @model SavorySweets.Models.Treat
+
 <h2>Edit Treat: @Html.DisplayFor(model => model.Name) @Html.ActionLink("Home", "Index", "Home", null, new { @class ="pageLink4" })</h2>
 
 <div class = "infoBox">
+
   @using (Html.BeginForm())
   {
     @Html.HiddenFor(model => model.TreatId)
 
     <h3>@Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name, new { @class = "wordLink", required = "required", })
-</h3>
-    <br />
+    @Html.EditorFor(model => model.Name, new { @class = "wordLink", required = "required", })</h3>
+    <br>
     <input type = "submit" value = "Save" class = "btn2" />
   }
   @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })

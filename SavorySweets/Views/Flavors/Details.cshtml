@@ -3,6 +3,7 @@
 }
 
 @model SavorySweets.Models.Flavor
+
 <h2> Flavor @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
   @Html.ActionLink("Home", "Index", "Home", null, new { @class = "pageLink4" })</h2>
 
@@ -23,6 +24,7 @@
 </div>
 
 <div class = "detailBox">
+  
   <img class = "image1" src = "~/image/candy5.png"> 
 
   @if(@Model.JoinEntities.Count == 0)
@@ -32,9 +34,11 @@
   else
   {
     <h3>Treats List for Flavor @Html.DisplayFor(model => model.Name)</h3>
+
     @foreach(var join in Model.JoinEntities)
     {
       <li>@join.Treat.Name</li>
+
       @using (Html.BeginForm("DeleteTreat", "Flavors"))
       {
         @Html.Hidden("joinId", @join.TreatFlavorId)

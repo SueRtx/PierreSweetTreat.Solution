@@ -3,17 +3,22 @@
 }
 
 @model SavorySweets.Models.Flavor
+
 <h2>Add a Treat to this Flavor: @Html.DisplayFor(model => model.Name)@Html.ActionLink("Home", "Index", "Home", null, new { @class ="pageLink4" })</h2>
 
 <div class = "infoBox">
+
   @using (Html.BeginForm())
   {
     @Html.HiddenFor(model => model.FlavorId)
     <h3>@Html.Label("Select Treat")
+
     @Html.DropDownList("TreatId")</h3>
-    <br />
-    <input type = "submit" value = "Save"  class = "btn2"/>
+    <br>
+    
+    <input type = "submit" value = "Save"  class = "btn2" />
   }
+
   @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
 
   <img src = "~/image/candy12.png">

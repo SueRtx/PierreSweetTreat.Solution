@@ -3,16 +3,20 @@
 }
 
 @model SavorySweets.Models.Treat
-<h2>Treat @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name) @Html.ActionLink("Home", "Index", "Home", null, new { @class ="pageLink4" })</h2>
+
+<h2>Treat @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name) 
+  
+@Html.ActionLink("Home", "Index", "Home", null, new { @class ="pageLink4" })</h2>
 
 <div class = "infoBox">
-  
   <h3>Are you sure you want to <strong>DELETE</strong> this Treat?</h3>
   <br>
+
   @using (Html.BeginForm())
   {
     <input type = "submit" value = "Delete" class = "btn2" />
   }
+  
   @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
 </div>
 

@@ -3,9 +3,11 @@
 }
 
 @model SavorySweets.Models.Treat
+
 <h2>Add Flavor to Treat: @Html.DisplayFor(model => model.Name)</h2>
 
 <div class = "infoBox">
+
   @using (Html.BeginForm())
   {
     @Html.HiddenFor(model => model.TreatId)
@@ -15,6 +17,7 @@
   
     <input type = "submit" value = "Save" class = "btn2" />  
   }
+  
   @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
 </div>
 
