@@ -24,11 +24,10 @@
 
   @Html.ActionLink("Add Treat", "Create", "Treats", null, new { @class = "pageLink" })
   @Html.ActionLink("Add Flavor", "Create", "Flavors", null, new { @class = "pageLink" })
-  <br />
 </div>
 
 <div class = "row">
-  <div class = "col">
+  <div class = "col1">
 
     @if (ViewBag.Treats.Count == 0)
     {
@@ -46,7 +45,7 @@
     }
   </div>
 
-  <div class = "col">
+  <div class = "col2">
 
     @if (ViewBag.Flavors.Count == 0) 
     {
