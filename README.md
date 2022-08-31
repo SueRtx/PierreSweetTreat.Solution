@@ -19,12 +19,6 @@
 ## Description
 
 The application has user authentication. Users are able to login and logout. Only login users could create, update and delete. All users are able to read without login. There are many-to-many relationships between Treats and Flavors. A treat can have many flavors and a flavor can have many treats. Users are able to navigate to a splash page that lists all treats and flavors and click on an individual treat or flavor to see all the treats/flavors that belong to it.
-<<<<<<< HEAD
-=======
-
-## Home View
-![Home Index](SavorySweets/wwwroot/image/home.png "Home Index image")
->>>>>>> 95953ce006af598e6e6738549e461d82aaf13020
 
 ## Project Views
 ![Home Index](SavorySweet/wwwroot/image/home.png "Home Index image")
